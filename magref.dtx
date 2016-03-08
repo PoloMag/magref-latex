@@ -1,0 +1,191 @@
+% \iffalse meta-comment
+%
+% Copyright (C) 2014 by Fábio Fortkamp <fabio@fabiofortkamp.com>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Fábio Fortkamp.
+%
+% This work consists of the files magref.dtx and magref.ins
+% and the derived file magref.sty and magref.pdf.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{magref.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}
+%<package>\ProvidesPackage{magref}[2016/03/08 v0.1 basic commands]
+%<package>
+%<package>\RequirePackage{engsymbols}
+%<package>\RequirePackage[version=4]{mhchem}
+%<package>\RequirePackage[per-mode=symbol]{siunitx}
+%<package>\RequirePackage{ifthen}
+%<package>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{magref}[2014/12/02]
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\bibliographystyle{plain}
+\EnableCrossrefs         
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{magref.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{0}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{v0.1}{2014/12/05}{Initial version}
+%
+% \GetFileInfo{magref.sty}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+% 
+%
+% \title{The \textsf{magref} package\thanks{This document
+%   corresponds to \textsf{magref}~\fileversion, dated \filedate.}}
+% \author{Fábio Fortkamp \\ \texttt{fabio@fabiofortkamp.com}}
+%
+% \maketitle
+%
+% \section{Introduction}
+% \label{sec:introduction}
+%
+% This document describes the \textsf{magref} package, a collection of macros to facilitate the writing of papers and reports on magnetic refrigeration.
+% It just defines common macros and loads packages that are normally used:
+%
+% \begin{itemize}
+% \item \textsf{engsymbols}
+% \item \textsf{sinuitx}
+% \item \textsf{mhchem}
+% \item \textsf{ifthen}
+% \end{itemize}
+%
+% 
+% Please notice that the user should refer to other references such as papers and textbooks to get the meaning of the symbols I describe here.
+%
+% \section{Implementation}
+%
+% The use of the conditional commands to define these custom macro is because some packages and classes that I use in conjuntion with \textsf{magref} provide some obscure commands that clash with them. A normal user should not have any problems with that.
+%
+% \subsection{Specfic heats}
+% \label{sec:basic-operations}
+%
+%    \begin{macrocode}
+\newcommand{\cpo}{c_{p,0}}
+\newcommand{\cvo}{c_{v,0}}
+%    \end{macrocode}
+%
+%\subsection{Common refrigeration parameters}
+%\label{sec:ref}
+% 
+%    \begin{macrocode}
+\newcommand{\qe}{\rate{Q}\ped{e}}
+\newcommand{\dtspan}{\Delta{}T\ped{span}}
+\newcommand{\wpump}{\rate{W}\ped{p}}
+\newcommand{\wmag}{\rate{W}\ped{m}}
+\newcommand{\cop}{\mathrm{COP}}
+\newcommand{\dtad}{\Delta{}T\ped{ad}}
+\newcommand{\dsm}{\Delta{}s\ped{m}}
+\newcommand{\tc}{T\ped{C}}
+\ifthenelse{\isundefined{\th}}{\newcommand{\th}{T\ped{H}}}{\renewcommand{\th}{T\ped{H}}}
+\newcommand{\qc}{\rate{Q}\ped{C}}
+\newcommand{\qh}{\rate{Q}\ped{H}}
+\newcommand{\ths}{T\ped{H,s}}
+\newcommand{\tcs}{T\ped{C,s}}
+\newcommand{\w}{\rate{W}}
+\newcommand{\lcool}{\Lambda\ped{cool}}
+%    \end{macrocode}
+%
+%\subsection{Common vector parameters}
+%\label{sec:vectors}
+%
+%    \begin{macrocode}
+\newcommand{\rvec}{\nvector{r}}
+\newcommand{\nvh}{\nvector{H}}
+\newcommand{\nvb}{\nvector{B}}
+\newcommand{\nvrem}{\nvector{B}\ped{rem}}
+\newcommand{\nvbrem}{\nvrem}
+\newcommand{\nvm}{\nvector{M}}
+\newcommand{\nvbremhat}{\hat{\nvector{B}}\ped{rem}}
+\newcommand{\nvbi}{\nvector{B}_i}
+\newcommand{\nvhi}{\nvector{H}_i}
+\newcommand{\nvremi}{\nvector{B}_{\mathrm{rem},i}}
+\newcommand{\nvai}{\nvector{A}_i}
+%    \end{macrocode}
+%
+%\subsection{Common other scalar parameters}
+%\label{sec:scalar}
+%
+%    \begin{macrocode}
+\newcommand{\mur}{\mu\ped{r}}
+\newcommand{\bl}{B\ped{l}}
+\newcommand{\bh}{B\ped{h}}
+\newcommand{\brem}{B\ped{rem}}
+\newcommand{\muri}{\mu_{\mathrm{r},i}}
+\newcommand{\bremi}{B_{\mathrm{rem},i}}
+%    \end{macrocode}
+% 
+%\subsection{Geometric parameters}
+%\label{sec:geom}
+%
+%    \begin{macrocode}
+\newcommand{\ri}{R\ped{i}}
+\ifthenelse{\isundefined{\ro}}{\newcommand{\ro}{R\ped{o}}}{\renewcommand{\ro}{R\ped{o}}}
+\newcommand{\rg}{R\ped{g}}
+\newcommand{\rs}{R\ped{s}}
+\newcommand{\rc}{R\ped{c}}
+\newcommand{\re}{R\ped{e}}
+\newcommand{\hgap}{h\ped{gap}}
+%    \end{macrocode}
+%
+%\subsection{Coefficients for the analytical solution}
+%\label{sec:coef}
+%
+%    \begin{macrocode}
+\newcommand{\acoef}[2]{a_{{#1},\mathrm{#2}}}
+\newcommand{\bcoef}[2]{b_{{#1},\mathrm{#2}}}
+\newcommand{\Azexpr}[1]{A_{\mathrm{#1}\, ,z}}
+\newcommand{\bremii}{B_{\mathrm{rem,II}}}
+\newcommand{\bremiv}{B_{\mathrm{rem,IV}}}
+\newcommand{\murn}[1]{\mu\ped{r,#1}}
+\newcommand{\aIII}{\acoef{1}{III}}
+\newcommand{\bIII}{\bcoef{1}{III}}
+\newcommand{\nvbIII}{\nvector{B}\ped{III}}
+\newcommand{\BIII}{B\ped{III}}
+%    \end{macrocode}
+%
+% \Finale
+\endinput
