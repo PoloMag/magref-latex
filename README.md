@@ -1,4 +1,4 @@
-engsymbols
+magref
 ==========
 
 This is a LaTeX package to facilitate writing of documents containing common symbols used in magnetic refrigeration.
