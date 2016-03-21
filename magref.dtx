@@ -24,7 +24,7 @@
 \ProvidesFile{magref.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}
-%<package>\ProvidesPackage{magref}[2016/03/08 v0.1 basic commands]
+%<package>\ProvidesPackage{magref}[2016/03/21 v0.2]
 %<package>
 %<package>\RequirePackage{engsymbols}
 %<package>\RequirePackage[version=4]{mhchem}
@@ -67,7 +67,8 @@
 %   Right brace   \}     Tilde         \~}
 %
 %
-% \changes{v0.1}{2014/12/05}{Initial version}
+% \changes{v0.1}{2016/03/08}{Initial version}
+% \changes{v0.2}{2016/03/21}{Included magnetic dipole-related vector fields}
 %
 % \GetFileInfo{magref.sty}
 %
@@ -129,7 +130,7 @@
 \newcommand{\lcool}{\Lambda\ped{cool}}
 %    \end{macrocode}
 %
-%\subsection{Common vector parameters}
+%\subsection{Common vector fields}
 %\label{sec:vectors}
 %
 %    \begin{macrocode}
@@ -139,6 +140,8 @@
 \newcommand{\nvrem}{\nvector{B}\ped{rem}}
 \newcommand{\nvbrem}{\nvrem}
 \newcommand{\nvm}{\nvector{M}}
+\newcommand{\nvdip}{\nvector{m}}
+\newcommand{\nvnetdip}{\nvector{\mathcal{M}}}
 \newcommand{\nvbremhat}{\hat{\nvector{B}}\ped{rem}}
 \newcommand{\nvbi}{\nvector{B}_i}
 \newcommand{\nvhi}{\nvector{H}_i}
