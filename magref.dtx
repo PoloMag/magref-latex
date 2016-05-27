@@ -24,7 +24,7 @@
 \ProvidesFile{magref.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}
-%<package>\ProvidesPackage{magref}[2016/03/21 v0.2]
+%<package>\ProvidesPackage{magref}[2016/05/27 v0.3]
 %<package>
 %<package>\RequirePackage{engsymbols}
 %<package>\RequirePackage[version=4]{mhchem}
@@ -33,7 +33,7 @@
 %<package>
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage{magref}[2014/12/02]
+\usepackage{magref}[2016/05/27]
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \bibliographystyle{plain}
@@ -69,6 +69,7 @@
 %
 % \changes{v0.1}{2016/03/08}{Initial version}
 % \changes{v0.2}{2016/03/21}{Included magnetic dipole-related vector fields}
+% \changes{v0.3}{2016/05/27}{Included more commands based on frequency of use in papers}
 %
 % \GetFileInfo{magref.sty}
 %
@@ -109,14 +110,16 @@
 \newcommand{\cvo}{c_{v,0}}
 %    \end{macrocode}
 %
-%\subsection{Common refrigeration parameters}
+%\subsection{Common refrigeration and thermodynamic parameters}
 %\label{sec:ref}
 % 
 %    \begin{macrocode}
 \newcommand{\qe}{\rate{Q}\ped{e}}
 \newcommand{\dtspan}{\Delta{}T\ped{span}}
-\newcommand{\wpump}{\rate{W}\ped{p}}
-\newcommand{\wmag}{\rate{W}\ped{m}}
+\newcommand{\w}{\rate{W}}
+\newcommand{\wpump}{\w\ped{p}}
+\newcommand{\wmag}{\w\ped{m}}
+\newcommand{\wvisc}{\w\ped{visc}}
 \newcommand{\cop}{\mathrm{COP}}
 \newcommand{\dtad}{\Delta{}T\ped{ad}}
 \newcommand{\dsm}{\Delta{}s\ped{m}}
@@ -126,8 +129,9 @@
 \newcommand{\qh}{\rate{Q}\ped{H}}
 \newcommand{\ths}{T\ped{H,s}}
 \newcommand{\tcs}{T\ped{C,s}}
-\newcommand{\w}{\rate{W}}
 \newcommand{\lcool}{\Lambda\ped{cool}}
+\newcommand{\tcurie}{T\ped{Curie}}
+\newcommand{\ntu}{\mathrm{NTU}}
 %    \end{macrocode}
 %
 %\subsection{Common vector fields}
@@ -137,6 +141,7 @@
 \newcommand{\rvec}{\nvector{r}}
 \newcommand{\nvh}{\nvector{H}}
 \newcommand{\nvb}{\nvector{B}}
+\newcommand{\nva}{\nvector{A}}
 \newcommand{\nvrem}{\nvector{B}\ped{rem}}
 \newcommand{\nvbrem}{\nvrem}
 \newcommand{\nvm}{\nvector{M}}
@@ -146,7 +151,17 @@
 \newcommand{\nvbi}{\nvector{B}_k}
 \newcommand{\nvhi}{\nvector{H}_k}
 \newcommand{\nvremi}{\nvector{B}_{\mathrm{rem},k}}
+\newcommand{\nvbremi}{\nvremi}
 \newcommand{\nvai}{\nvector{A}_k}
+\newcommand{\nvha}{\nvh\ped{a}}
+\newcommand{\nvhd}{\nvh\ped{d}}
+%    \end{macrocode}
+%
+%\subsection{Scalar fields defined from vector fields}
+%\label{sec:scalar-from-vector}
+%
+%    \begin{macrocode}
+\newcommand{\nha}{H\ped{a}}
 %    \end{macrocode}
 %
 %\subsection{Common other scalar parameters}
@@ -156,11 +171,30 @@
 \newcommand{\mur}{\mu\ped{r}}
 \newcommand{\bl}{B\ped{l}}
 \newcommand{\bh}{B\ped{h}}
+\newcommand{\hal}{H\ped{a,l}}
+\newcommand{\hah}{H\ped{a,h}}
 \newcommand{\brem}{B\ped{rem}}
 \newcommand{\muri}{\mu_{\mathrm{r},k}}
 \newcommand{\bremi}{B_{\mathrm{rem},k}}
+\newcommand{\avgb}[1]{\left\langle B^{2/3} \right\rangle\ped{#1}}
+\newcommand{\qmce}{q'\ped{MCE}}
 %    \end{macrocode}
-% 
+%
+%\subsection{Aliases from common terms}
+%\label{sec:term}
+%
+%    \begin{macrocode}
+\newcommand{\ndfeb}{\ce{Nd{-}Fe{-}B} }
+%    \end{macrocode}
+%
+%\subsection{Thermodynamic potentials}
+%\label{sec:potential}
+%
+%    \begin{macrocode}
+\newcommand{\sigmaxdh}{\sigma \diffd{H\ped{a}}}
+\newcommand{\hxdsigma}{H\ped{a}\diffd{\sigma}}
+%    \end{macrocode}
+%
 %\subsection{Geometric parameters}
 %\label{sec:geom}
 %
