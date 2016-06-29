@@ -24,7 +24,7 @@
 \ProvidesFile{magref.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}
-%<package>\ProvidesPackage{magref}[2016/05/27 v0.3]
+%<package>\ProvidesPackage{magref}[2016/06/29 v0.3.1]
 %<package>
 %<package>\RequirePackage{engsymbols}
 %<package>\RequirePackage[version=4]{mhchem}
@@ -70,6 +70,7 @@
 % \changes{v0.1}{2016/03/08}{Initial version}
 % \changes{v0.2}{2016/03/21}{Included magnetic dipole-related vector fields}
 % \changes{v0.3}{2016/05/27}{Included more commands based on frequency of use in papers}
+% \changes{v0.3.1}{2016/06/29}{Capitalized subscripts of power}
 %
 % \GetFileInfo{magref.sty}
 %
@@ -117,12 +118,12 @@
 \newcommand{\qe}{\rate{Q}\ped{e}}
 \newcommand{\dtspan}{\Delta{}T\ped{span}}
 \newcommand{\w}{\rate{W}}
-\newcommand{\wpump}{\w\ped{p}}
-\newcommand{\wmag}{\w\ped{m}}
+\newcommand{\wpump}{\w\ped{P}}
+\newcommand{\wmag}{\w\ped{M}}
 \newcommand{\wvisc}{\w\ped{visc}}
 \newcommand{\cop}{\mathrm{COP}}
 \newcommand{\dtad}{\Delta{}T\ped{ad}}
-\newcommand{\dsm}{\Delta{}s\ped{m}}
+\newcommand{\dsm}{\Delta{}s\ped{M}}
 \newcommand{\tc}{T\ped{C}}
 \ifthenelse{\isundefined{\th}}{\newcommand{\th}{T\ped{H}}}{\renewcommand{\th}{T\ped{H}}}
 \newcommand{\qc}{\rate{Q}\ped{C}}
