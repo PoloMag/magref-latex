@@ -142,6 +142,7 @@
 \newcommand{\nvh}{\nvector{H}}
 \newcommand{\nvb}{\nvector{B}}
 \newcommand{\nva}{\nvector{A}}
+\newcommand{\nvf}{\nvector{F}^B}
 \newcommand{\nvrem}{\nvector{B}\ped{rem}}
 \newcommand{\nvbrem}{\nvrem}
 \newcommand{\nvm}{\nvector{M}}
@@ -155,6 +156,12 @@
 \newcommand{\nvai}{\nvector{A}_k}
 \newcommand{\nvha}{\nvh\ped{a}}
 \newcommand{\nvhd}{\nvh\ped{d}}
+\newcommand{\indexremmk}[2]{\mathrm{rem},{#1},{#2}}
+\newcommand{\nvbremmk}[2]{\nvb_{\indexremmk{#1}{#2}}}
+\newcommand{\bremmk}[2]{B_{\indexremmk{#1}{#2}}}
+\newcommand{\alpharemmk}[2]{\alpha_{\indexremmk{#1}{#2}}}
+\newcommand{\nvfremmk}[2]{\nvector{F}^B_{\indexremmk{#1}{#2}}}
+\newcommand{\nvbiii}{\nvb\ped{III}}
 %    \end{macrocode}
 %
 %\subsection{Scalar fields defined from vector fields}
