@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-% Copyright (C) 2014 by Fábio Fortkamp <fabio@fabiofortkamp.com>
+% Copyright (C) 2014 by Fabio Fortkamp <fabio@fabiofortkamp.com>
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -12,7 +12,7 @@
 %
 % This work has the LPPL maintenance status `maintained'.
 %
-% The Current Maintainer of this work is Fábio Fortkamp.
+% The Current Maintainer of this work is Fabio Fortkamp.
 %
 % This work consists of the files magref.dtx and magref.ins
 % and the derived file magref.sty and magref.pdf.
@@ -24,7 +24,7 @@
 \ProvidesFile{magref.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}
-%<package>\ProvidesPackage{magref}[2016/06/29 v0.3.1]
+%<package>\ProvidesPackage{magref}[2019/04/22 v0.3.2]
 %<package>
 %<package>\RequirePackage{engsymbols}
 %<package>\RequirePackage[version=4]{mhchem}
@@ -43,7 +43,6 @@
 \begin{document}
   \DocInput{magref.dtx}
   \PrintChanges
-  \PrintIndex
 \end{document}
 %</driver>
 % \fi
@@ -71,6 +70,7 @@
 % \changes{v0.2}{2016/03/21}{Included magnetic dipole-related vector fields}
 % \changes{v0.3}{2016/05/27}{Included more commands based on frequency of use in papers}
 % \changes{v0.3.1}{2016/06/29}{Capitalized subscripts of power}
+% \changes{v0.3.2}{2019/04/22}{Made subscripts of power whole words}
 %
 % \GetFileInfo{magref.sty}
 %
@@ -118,8 +118,10 @@
 \newcommand{\qe}{\rate{Q}\ped{e}}
 \newcommand{\dtspan}{\Delta{}T\ped{span}}
 \newcommand{\w}{\rate{W}}
-\newcommand{\wpump}{\w\ped{P}}
-\newcommand{\wmag}{\w\ped{M}}
+\newcommand{\wpump}{\w\ped{pump}}
+\newcommand{\wmag}{\w\ped{mag}}
+\newcommand{\wshaft}{\w\ped{shaft}}
+\newcommand{\wvalve}{\w\ped{valve}}
 \newcommand{\wvisc}{\w\ped{visc}}
 \newcommand{\cop}{\mathrm{COP}}
 \newcommand{\dtad}{\Delta{}T\ped{ad}}
