@@ -24,7 +24,7 @@
 \ProvidesFile{magref.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}
-%<package>\ProvidesPackage{magref}[2019/04/22 v0.3.2]
+%<package>\ProvidesPackage{magref}[2019/04/22 v0.4]
 %<package>
 %<package>\RequirePackage{engsymbols}
 %<package>\RequirePackage[version=4]{mhchem}
@@ -71,7 +71,7 @@
 % \changes{v0.3}{2016/05/27}{Included more commands based on frequency of use in papers}
 % \changes{v0.3.1}{2016/06/29}{Capitalized subscripts of power}
 % \changes{v0.3.2}{2019/04/22}{Made subscripts of power whole words}
-%
+% \changes{v0.4}{2019/04/22}{Added more notation of temperature spans and differences}
 % \GetFileInfo{magref.sty}
 %
 % \DoNotIndex{\newcommand,\newenvironment}
@@ -103,20 +103,14 @@
 %
 % The use of the conditional commands to define these custom macro is because some packages and classes that I use in conjuntion with \textsf{magref} provide some obscure commands that clash with them. A normal user should not have any problems with that.
 %
-% \subsection{Specfic heats}
-% \label{sec:basic-operations}
-%
-%    \begin{macrocode}
-\newcommand{\cpo}{c_{p,0}}
-\newcommand{\cvo}{c_{v,0}}
-%    \end{macrocode}
-%
 %\subsection{Common refrigeration and thermodynamic parameters}
 %\label{sec:ref}
 % 
 %    \begin{macrocode}
 \newcommand{\qe}{\rate{Q}\ped{e}}
 \newcommand{\dtspan}{\Delta{}T\ped{span}}
+\newcommand{\dtsys}{\Delta{}T\ped{sys}}
+\newcommand{\dtreg}{\Delta{}T\ped{reg}}
 \newcommand{\w}{\rate{W}}
 \newcommand{\wpump}{\w\ped{pump}}
 \newcommand{\wmag}{\w\ped{mag}}
@@ -128,6 +122,10 @@
 \newcommand{\dsm}{\Delta{}s\ped{M}}
 \newcommand{\tc}{T\ped{C}}
 \ifthenelse{\isundefined{\th}}{\newcommand{\th}{T\ped{H}}}{\renewcommand{\th}{T\ped{H}}}
+\newcommand{\tcend}{T\ped{CE}}
+\newcommand{\thend}{T\ped{HE}}
+\newcommand{\dthhex}{\Delta{}T\ped{HHEX}}
+\newcommand{\dtchex}{\Delta{}T\ped{CHEX}}
 \newcommand{\qc}{\rate{Q}\ped{C}}
 \newcommand{\qh}{\rate{Q}\ped{H}}
 \newcommand{\ths}{T\ped{H,s}}
@@ -137,7 +135,7 @@
 \newcommand{\ntu}{\mathrm{NTU}}
 \newcommand{\mf}{\rate{m}\ped{f}}
 \newcommand{\vvf}{\rate{\vv}\ped{f}}
-\newcommand{\etasec}{\eta_{2\ap{nd}}}
+\newcommand{\etasec}{\eta\ped{2nd}}
 %    \end{macrocode}
 %
 %\subsection{Common vector fields}
